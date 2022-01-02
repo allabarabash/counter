@@ -18,8 +18,19 @@ class Counter extends Component {
     // }
 
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps.counter.value !== this.props.counter.value) {
+            // Ajax call and get new data from the server
+        }
+    }
+
+    componentWillUnmount() {
+        console.log('Counter - Umnount');
+    }
 
     render() {
+
+        console.log('Counter - Rendered');
         const {counter, onDelete, onIncrement} = this.props;
 
         return (
